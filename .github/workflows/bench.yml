@@ -1,0 +1,15 @@
+name: Benchmark trg-disasm
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-windows:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run benchmark
+        run: python comparer.py
